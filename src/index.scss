@@ -1,0 +1,19 @@
+@font-face {
+    font-family: Mukta;
+    src: url('./assets/fonts/Mukta/Mukta-Regular.ttf');
+}
+
+@font-face {
+    font-family: Inter;
+    src: url('./assets/fonts/Inter/Inter-VariableFont_slnt\,wght.ttf');
+}
+
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: Mukta;
+}

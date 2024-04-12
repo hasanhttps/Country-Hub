@@ -1,0 +1,8 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    
+    main{
+        min-height: calc(100vh - 167px);
+    }
+}

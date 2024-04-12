@@ -1,0 +1,11 @@
+@import '../../assets/styles/mixins.scss';
+
+.footer-container{
+    @include dflex-between();
+    height: 77px;
+    padding: {
+        left: 45px;
+        right: 45px;
+    }
+    box-shadow: 0px -1px 0px 0px #0000008F;
+}

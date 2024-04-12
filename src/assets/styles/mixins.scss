@@ -1,0 +1,11 @@
+@mixin dflex-between(){
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+@mixin dflex($gap: 12px){
+    display: flex;
+    gap: $gap;
+    align-items: center;
+}
