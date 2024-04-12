@@ -1,11 +1,6 @@
 @import '../../assets/styles/mixins.scss';
 @import '../../assets/styles/variables.scss';
 
-@font-face {
-    font-family: MuktaLight;
-    src: url('../../assets/fonts/Mukta/Mukta-Light.ttf');
-};
-
 .header-container{
     @include dflex-between();
     height: 90px;
@@ -21,7 +16,7 @@
         p{
             color: $red;
             font-size: 26px;
-            font-family: MuktaLight;
+            font-family: Mukta;
         }
     }
 

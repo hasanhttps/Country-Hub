@@ -1,0 +1,62 @@
+@import '../../assets/styles/mixins.scss';
+@import '../../assets/styles/variables.scss';
+
+.container{
+    @include dflex(45px);
+    margin-top: 68px;
+
+    .searchbar{
+        @include dflex(0px);
+        width: 674px;
+        height: 41px;
+    
+        &__input{
+            @include dflex(0px);   
+            width: 565px;
+            height: 41px;
+            border: none;
+            outline: none;
+            padding: 14px;
+            border-top-left-radius: 21px;
+            border-bottom-left-radius: 21px;
+            box-shadow: 1px 1px 15px 0px #00000033;
+        }
+    
+        &__input::placeholder{
+            color: $gray;
+        }
+    
+        &__filter{
+            @include dflex(10px);
+            width: 109px;
+            height: 41px;
+            color: white;
+            font-size: 17px;
+            justify-content: center;    
+            background-color: $l-blue;
+            border-top-right-radius: 21px;
+            border-bottom-right-radius: 21px;
+    
+            img{
+                cursor: pointer;
+            }
+        }
+    }
+
+    .search-button{
+        @include dflex(0px);
+        width: 103px;
+        height: 41px;   
+        border: none;
+        color: white;
+        cursor: pointer;
+        border-radius: 20px;
+        justify-content: center;
+        background-color: $l-green;
+        box-shadow: 0px 1px 4px 3px #00000040;
+
+        p{
+            font-family: Inter;
+        }
+    }
+}
