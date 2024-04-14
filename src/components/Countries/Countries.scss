@@ -1,0 +1,8 @@
+@import '../../assets/styles/mixins.scss';
+
+.countries{
+    @include dflex(97px);
+    @include size(1691px, auto);
+    margin-top: 141px;
+    flex-wrap: wrap;
+}

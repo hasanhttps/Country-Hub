@@ -9,3 +9,15 @@
     gap: $gap;
     align-items: center;
 }
+
+@mixin dflexcolumn($gap: 12px){
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: $gap;
+}
+
+@mixin size($width, $height){
+    width: $width;
+    height: $height;
+}

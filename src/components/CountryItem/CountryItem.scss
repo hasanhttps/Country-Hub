@@ -1,0 +1,44 @@
+@import '../../assets/styles/mixins.scss';
+
+@font-face {
+    font-family: MuktaBold;
+    src: url('../../assets/fonts/Mukta/Mukta-Medium.ttf');
+}
+
+.item{
+    @include dflexcolumn(27px);
+    @include size(350px, 400px);
+    border-radius: 20px;
+    padding: {
+        top: 15px;
+        bottom: 21px;
+    }
+    box-shadow: 0px 1px 15px 0px #00000040;
+
+    .head-part{
+        @include size(332px, 214px);
+        .country-img{
+            @include size(332px, 214px);
+            object-fit: cover;
+            border-radius: 8px;
+        }
+    }
+
+    .bottom-part{
+        @include dflexcolumn(27px);
+        @include size(332px, auto);
+        align-items: start !important;
+        
+        .country-name{
+            height: 21px;
+            font-family: MuktaBold;
+            font-size: 22px;
+        }
+
+        .info{
+            @include dflex-between();
+            @include size(332px, auto);
+            font-size: 18px;
+        }
+    }
+}

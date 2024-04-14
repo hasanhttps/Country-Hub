@@ -3,6 +3,7 @@
 .footer-container{
     @include dflex-between();
     height: 77px;
+    margin-top: 73px;
     padding: {
         left: 45px;
         right: 45px;

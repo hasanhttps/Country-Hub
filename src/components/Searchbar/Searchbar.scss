@@ -7,13 +7,11 @@
 
     .searchbar{
         @include dflex(0px);
-        width: 674px;
-        height: 41px;
+        @include size(674px, 41px);
     
         &__input{
             @include dflex(0px);   
-            width: 565px;
-            height: 41px;
+            @include size(565px, 41px);
             border: none;
             outline: none;
             padding: 14px;
@@ -28,8 +26,7 @@
     
         &__filter{
             @include dflex(10px);
-            width: 109px;
-            height: 41px;
+            @include size(109px, 41px);
             color: white;
             font-size: 17px;
             justify-content: center;    
@@ -45,8 +42,7 @@
 
     .search-button{
         @include dflex(0px);
-        width: 103px;
-        height: 41px;   
+        @include size(103px, 41px);  
         border: none;
         color: white;
         cursor: pointer;
