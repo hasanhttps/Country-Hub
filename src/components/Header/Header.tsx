@@ -1,5 +1,5 @@
 import './Header.scss'
-import CountryHub from '../../../public/country-hub.svg'
+import CountryHub from '/country-hub.svg'
 import { faBars } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
