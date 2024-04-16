@@ -14,8 +14,7 @@ function App() {
       <main>
         <Searchbar/>
 
-        <Countries/>        
-        
+        <Countries/>
       </main>
 
       <Footer/>

@@ -18,7 +18,6 @@ export const FetchSlice = createSlice({
     },
     Success: (state, action: PayloadAction<object[]>) => {
       state.list = action.payload;
-      console.log(action.payload);
       state.error = '';
     },
     Error: (state, action: PayloadAction<string>) => {

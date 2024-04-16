@@ -7,19 +7,32 @@ import { useAppDispatch, useAppSelector } from '../../utils/hooks'
 const Countries = () => {
 
     const dispatch = useAppDispatch();
-    const [count, setCount] = useState(4); 
+    const [seeMore, setSeeMore] = useState(false); 
+    const [countries, setCountries] = useState<object>([]);
     const { list } = useAppSelector((state) => state.fetchReducer);
 
     useEffect(() => {
-        dispatch(fetchCountries());
-    }, []);
+        dispatch(fetchCountries()).then(() => {
+            if (seeMore) setCountries(list.filter(() => true));
+            else {
+                setCountries(list.filter((item, i) => {
+                   return (4 >=  i + 1);
+                }));
+            }
+        });
+
+    }, [seeMore, countries]);
 
     return (
-        <div className='countries'>
-            {list.map((item, i) => (
-                <CountryItem key={i} population={item.population} flag={item.flags.svg} country={item.name.official} item={item} symbol={(item.currencies != null ? Object.values(item.currencies)[0].symbol : ' ')} />
-            ))}
-        </div>   
+        <div className='countries-container'>
+            <div className='countries'>
+                {countries?.map((item, i) => (
+                    <CountryItem key={i} population={item.population} flag={item.flags.svg} country={item.name.official} item={item} symbol={(item.currencies != null ? Object.values(item.currencies)[0].symbol : ' ')} />
+                ))}
+            </div>   
+
+            <button className='see-more' onClick={() => setSeeMore(!seeMore)}>{!seeMore ? <p>See more countries</p> : <p>See less countries</p>}</button>
+        </div>
     )
 }
 

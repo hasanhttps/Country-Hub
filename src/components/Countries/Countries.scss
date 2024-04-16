@@ -1,8 +1,23 @@
 @import '../../assets/styles/mixins.scss';
 
-.countries{
-    @include dflex(97px);
-    @include size(1691px, auto);
-    margin-top: 141px;
-    flex-wrap: wrap;
+.countries-container{
+    @include dflexcolumn(47px);
+    margin-top: 80px;
+
+    .countries{
+        @include dflex(97px);
+        @include size(1691px, auto);
+        flex-wrap: wrap;
+    }
+    
+    .see-more{
+        @include size(136px, 53px);
+        color: black;
+        cursor: pointer;
+        font-size: 12px;
+        border-radius: 20px;
+        background-color: white;
+        border: 0.5px solid #000000;
+        margin-bottom: 40px;
+    }
 }
