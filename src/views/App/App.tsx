@@ -12,7 +12,6 @@ function App() {
       <Header/>
 
       <main>
-
         <Searchbar/>
 
         <Countries/>        

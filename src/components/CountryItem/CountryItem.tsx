@@ -1,6 +1,7 @@
 import './CountryItem.scss'
 import currencyimg from '../../assets/images/currency.svg'
 import populationimg from '../../assets/images/population.svg'
+import { Link } from 'react-router-dom'
 
 type CountryItemProps = {
     key: number,
@@ -10,10 +11,10 @@ type CountryItemProps = {
     population: number
 }
 
-const CountryItem = ({flag, country, population, symbol, key,}: CountryItemProps) => {
+const CountryItem = ({flag, country, population, symbol, key}: CountryItemProps) => {
 
     return (
-        <div className='item' key={key}>
+        <Link to={`/${country}`} className='item' key={key}>
             <div className='head-part'>
                 <img className='country-img' src={flag} />
             </div>
@@ -28,7 +29,7 @@ const CountryItem = ({flag, country, population, symbol, key,}: CountryItemProps
                     <p>{symbol}</p>
                 </div>
             </div>
-        </div>
+        </Link>
     )
 }
 

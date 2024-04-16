@@ -9,10 +9,13 @@
     @include dflexcolumn(27px);
     @include size(350px, 400px);
     border-radius: 20px;
+    color: black;
+    text-decoration: none;
     padding: {
         top: 15px;
         bottom: 21px;
     }
+    cursor: pointer;
     box-shadow: 0px 1px 15px 0px #00000040;
 
     .head-part{

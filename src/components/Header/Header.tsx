@@ -1,9 +1,13 @@
 import './Header.scss'
+import { useState } from 'react'
 import CountryHub from '/country-hub.svg'
+import { Sidebar } from 'primereact/sidebar'
 import { faBars } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const Header = () => {
+
+    const [visible, setVisible] = useState(true);
 
     return (
         <div className='header-container'>
@@ -12,8 +16,11 @@ const Header = () => {
                 <p>CountryHub</p>
             </div>
 
-            <button className='hamburger-menu'>
+            <button onClick={() => visible ? setVisible(false) : setVisible(true)} className='hamburger-menu'>
                 <FontAwesomeIcon icon={faBars} style={{height: '34px'}}/>
+                <Sidebar style={{height: '700px', background: 'white'}} position="right" visible={visible} onHide={() => {}}>
+                    <p>salam</p>
+                </Sidebar>
             </button>
         </div>
     )
