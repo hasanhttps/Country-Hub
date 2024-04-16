@@ -8,13 +8,15 @@ type CountryItemProps = {
     flag: string,
     symbol: string,
     country: string,
-    population: number
+    population: number,
+    item: object
 }
 
-const CountryItem = ({flag, country, population, symbol, key}: CountryItemProps) => {
+const CountryItem = ({flag, country, population, symbol, key, item}: CountryItemProps) => {
 
     return (
-        <Link to={`/${country}`} className='item' key={key}>
+        <Link to={`/${country}`} className='item' key={key}
+        state={{ item: item }}>
             <div className='head-part'>
                 <img className='country-img' src={flag} />
             </div>

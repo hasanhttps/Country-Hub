@@ -1,6 +1,7 @@
 import './Country.scss'
 import Footer from '../../components/Footer/Footer'
 import Header from '../../components/Header/Header'
+import CountryInfo from '../../components/CountryInfo/CountryInfo'
 
 const Country = () => {
 
@@ -9,7 +10,7 @@ const Country = () => {
             <Header/>
 
             <main>
-                
+                <CountryInfo/>
             </main>
 
             <Footer/>

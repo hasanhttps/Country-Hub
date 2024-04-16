@@ -1,0 +1,48 @@
+@import '../../assets/styles/mixins.scss';
+@import '../../assets/styles/variables.scss';
+
+.country-info{
+    @include dflex-between();
+    width: 100%;
+    padding: {
+        top: 38px;
+        left: 159px;
+        right: 28px;
+    }
+
+    .left-part{
+        @include dflexcolumn(20px); 
+        align-items: start !important;
+
+        p{
+            font-size: 15px;
+            color: $info-head;  
+            font-family: Mukta;
+        }
+
+        .value{
+            color: black;
+            font-size: 25px;
+            line-height: 25px;
+        }
+
+        .names, .native-names, .currencies{
+            @include dflexcolumn(30px); 
+            align-items: start !important;
+            margin-left: 10px;
+            font-size: 10px;
+        }
+
+        .common, .official, .capital, .region, .subregion, .population, .name, .symbol{
+            @include dflex(65px);
+        }
+    }
+    .right-part{
+        @include dflexcolumn();
+
+        img{
+            height: 220px;
+            object-fit: cover;
+        }
+    }
+}

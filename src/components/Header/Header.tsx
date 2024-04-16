@@ -7,7 +7,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const Header = () => {
 
-    const [visible, setVisible] = useState(true);
+    const [visible, setVisible] = useState(false);
 
     return (
         <div className='header-container'>
