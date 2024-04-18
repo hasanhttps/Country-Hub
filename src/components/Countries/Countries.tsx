@@ -21,7 +21,7 @@ const Countries = () => {
             }
         });
 
-    }, [seeMore, countries]);
+    }, [countries]);
 
     return (
         <div className='countries-container'>

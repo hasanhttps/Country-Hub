@@ -4,6 +4,7 @@ import CountryHub from '/country-hub.svg'
 import { Sidebar } from 'primereact/sidebar'
 import { faBars } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import SidebarContent from '../Sidebar/SidebarContent'
 
 const Header = () => {
 
@@ -16,12 +17,13 @@ const Header = () => {
                 <p>CountryHub</p>
             </div>
 
-            <button onClick={() => visible ? setVisible(false) : setVisible(true)} className='hamburger-menu'>
-                <FontAwesomeIcon icon={faBars} style={{height: '34px'}}/>
-                <Sidebar style={{height: '700px', background: 'white'}} position="right" visible={visible} onHide={() => {}}>
-                    <p>salam</p>
-                </Sidebar>
+            <button className='hamburger-menu' onClick={() => visible ? setVisible(false) : setVisible(true)}>
+                <FontAwesomeIcon icon={faBars} style={{height: '34px', cursor: 'pointer'}}/>
             </button>
+
+            <Sidebar style={{height: '750px', marginTop: '10px', background: 'white', width:'490px', boxShadow: '0 0 2000px rgba(0, 0, 0, 0.2)'}} position="right" visible={visible} onHide={() => {setVisible(false);}}>
+                <SidebarContent/>
+            </Sidebar>
         </div>
     )
 }
