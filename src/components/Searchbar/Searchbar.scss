@@ -23,19 +23,33 @@
         &__input::placeholder{
             color: $gray;
         }
-    
+
         &__filter{
-            @include dflex(10px);
-            @include size(109px, 41px);
+            -moz-appearance: none;
+            -webkit-appearance: none;
+            @include size(109px, 40.54px);
+
+            border: none;
+            outline: none;
             color: white;
+            cursor: pointer;
             font-size: 17px;
-            justify-content: center;    
+            font-weight: 400;
+            padding: {
+                left: 9px;
+            };
             background-color: $l-blue;
+            background-position-x: 90%;
+            background-position-y: 12px;
+            background-repeat: no-repeat;
             border-top-right-radius: 21px;
             border-bottom-right-radius: 21px;
-    
-            img{
-                cursor: pointer;
+            background-image: url('../../assets/images/polygon.svg');
+
+            option{
+                color: black;
+                font-size: 14px;
+                background: white;
             }
         }
     }

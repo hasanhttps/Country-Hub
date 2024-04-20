@@ -12,16 +12,16 @@ const Countries = () => {
     const { list } = useAppSelector((state) => state.fetchReducer);
 
     useEffect(() => {
-        dispatch(fetchCountries()).then(() => {
-            if (seeMore) setCountries(list.filter(() => true));
-            else {
-                setCountries(list.filter((item, i) => {
-                   return (4 >=  i + 1);
-                }));
-            }
-        });
+        if (list.length == 0) dispatch(fetchCountries());
+        if (seeMore) setCountries(list.filter(() => true));
+        else {
+            const filtered = list.filter((item, i) => {
+                return (4 >=  i + 1);
+            });
+            setCountries(filtered);
+        }
 
-    }, [countries]);
+    }, [seeMore, list]);
 
     return (
         <div className='countries-container'>

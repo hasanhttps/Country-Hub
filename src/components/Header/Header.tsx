@@ -13,8 +13,10 @@ const Header = () => {
     return (
         <div className='header-container'>
             <div className='title'>
-                <img src={CountryHub} />
-                <p>CountryHub</p>
+                <a href='/' style={{textDecoration:'none', display:'flex'}}>
+                    <img src={CountryHub}/>
+                    <p>CountryHub</p>
+                </a>
             </div>
 
             <button className='hamburger-menu' onClick={() => visible ? setVisible(false) : setVisible(true)}>

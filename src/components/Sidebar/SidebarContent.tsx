@@ -1,35 +1,34 @@
 import './SidebarContent.scss'
+import { useState } from 'react'
 import Select from 'react-select'
-import { useEffect, useState } from 'react'
-import { useAppSelector } from '../../utils/hooks'
+import {Box}   from '@mui/material'
+import Slider from '@mui/material/Slider'
 
-const SidebarContent = () => {
-    
+const SidebarContent = () => {    
     interface option{
         value: string,
         label: string
     }
     
-    const [options, setOptions] = useState<option[]>([]);
-    const [isOpen, setIsOpen] = useState(false);
-    const { list } = useAppSelector((state) => state.fetchReducer);
-    
-    useEffect(() => {
-        if (!isOpen){
-            setIsOpen(true);
-            list?.map((country, i) => {
-                if (options.length < 250) options.push({value: country?.name.official, label: country?.name.common});
-            });
-            setOptions(options);
-        }
-        console.log(options);
-    },[]); 
+    const [value, setValue] = useState<number[]>([450, 200000000]);
+    const options: option[] = [
+        {value: "europe", label: "Europe"},
+        {value: "asia", label: "Asia"},
+        {value: "africa", label: "Africa"},
+        {value: "americas", label: "Americas"},
+        {value: "oceania", label: "Oceania"},
+        {value: "northamerica", label: "North America"},
+    ]
+
+    const handleChange = (event: Event, newValue: number | number[]) => {
+        setValue(newValue as number[]);
+    };
 
     const handleAll = () => {
         let allbt = document.getElementById('all');
         let yesbt = document.getElementById('yes');
         let nobt = document.getElementById('no');
-
+        
         allbt!.style.color = '#1890FF';
         allbt!.style.border = '1px solid #1890FF';
 
@@ -88,6 +87,20 @@ const SidebarContent = () => {
                     <div className='region-container'>
                         <Select isMulti options={options} />
                     </div>
+                </div>
+
+                <div className='population'>
+                    <p>Population</p>
+                    <Box sx={{ width: 214 }}>
+                        <Slider
+                        min={450}
+                        max={1430000000}
+                        getAriaLabel={() => 'Population'}
+                        value={value}
+                        onChange={handleChange}
+                        valueLabelDisplay="auto"
+                        />
+                    </Box>
                 </div>
             </div>
         </div>
