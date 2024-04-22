@@ -3,13 +3,17 @@ import { useState } from 'react'
 import Select from 'react-select'
 import {Box}   from '@mui/material'
 import Slider from '@mui/material/Slider'
+import { useAppDispatch } from '../../utils/hooks'
+import { fetchCountries, fetchCountriesIndependent } from '../../utils/actions'
 
 const SidebarContent = () => {    
+
     interface option{
         value: string,
         label: string
     }
     
+    const dispatch = useAppDispatch();
     const [value, setValue] = useState<number[]>([450, 200000000]);
     const options: option[] = [
         {value: "europe", label: "Europe"},
@@ -37,6 +41,8 @@ const SidebarContent = () => {
 
         nobt!.style.color = 'black';
         nobt!.style.border = '1px solid #D9D9D9';
+
+        dispatch(fetchCountries());
     } 
     
     const handleYes = () => {
@@ -52,6 +58,8 @@ const SidebarContent = () => {
 
         nobt!.style.color = 'black';
         nobt!.style.border = '1px solid #D9D9D9';
+
+        dispatch(fetchCountriesIndependent("true"));
     } 
 
     const handleNo = () => {
@@ -67,6 +75,8 @@ const SidebarContent = () => {
 
         yesbt!.style.color = 'black';
         yesbt!.style.border = '1px solid #D9D9D9';
+
+        dispatch(fetchCountriesIndependent("false"));
     } 
     
     return (
